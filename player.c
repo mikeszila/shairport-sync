@@ -3328,6 +3328,7 @@ static void player_send_volume_metadata(uint8_t vol_mode_both, double airplay_vo
 }
 
 void player_volume_without_notification(double airplay_volume, rtsp_conn_info *conn) {
+  inform("Airplay Volume: %f", airplay_volume);
   debug_mutex_lock(&conn->volume_control_mutex, 5000, 1);
   // first, see if we are hw only, sw only, both with hw attenuation on the top or both with sw
   // attenuation on top
