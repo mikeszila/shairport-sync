@@ -2838,6 +2838,7 @@ void *player_thread_func(void *arg) {
 }
 
 void player_volume_without_notification(double airplay_volume, rtsp_conn_info *conn) {
+  inform("Airplay Volume: %f", airplay_volume);
   debug_mutex_lock(&conn->volume_control_mutex, 5000, 1);
   // first, see if we are hw only, sw only, both with hw attenuation on the top or both with sw
   // attenuation on top
